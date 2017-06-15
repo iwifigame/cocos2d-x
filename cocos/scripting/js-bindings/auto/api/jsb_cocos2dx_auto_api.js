@@ -245,6 +245,16 @@ generateMipmap : function (
 },
 
 /**
+ * @method getAlphaTexture
+ * @return {cc.Texture2D}
+ */
+getAlphaTexture : function (
+)
+{
+    return cc.Texture2D;
+},
+
+/**
  * @method getDescription
  * @return {String}
  */
@@ -2201,6 +2211,16 @@ create : function (
 },
 
 /**
+ * @method getAttachedNodeCount
+ * @return {int}
+ */
+getAttachedNodeCount : function (
+)
+{
+    return 0;
+},
+
+/**
  * @method Node
  * @constructor
  */
@@ -2703,20 +2723,20 @@ pause : function (
 
 /**
  * @method pushProjectionMatrix
- * @param {unsigned int} arg0
+ * @param {unsigned long} arg0
  */
 pushProjectionMatrix : function (
-int 
+long 
 )
 {
 },
 
 /**
  * @method popProjectionMatrix
- * @param {unsigned int} arg0
+ * @param {unsigned long} arg0
  */
 popProjectionMatrix : function (
-int 
+long 
 )
 {
 },
@@ -2733,10 +2753,10 @@ eventdispatcher
 
 /**
  * @method loadProjectionIdentityMatrix
- * @param {unsigned int} arg0
+ * @param {unsigned long} arg0
  */
 loadProjectionIdentityMatrix : function (
-int 
+long 
 )
 {
 },
@@ -2889,8 +2909,10 @@ getVisibleOrigin : function (
 
 /**
  * @method mainLoop
- */
-mainLoop : function (
+* @param {float} float
+*/
+mainLoop : function(
+float 
 )
 {
 },
@@ -2986,11 +3008,11 @@ scheduler
 /**
  * @method multiplyProjectionMatrix
  * @param {mat4_object} arg0
- * @param {unsigned int} arg1
+ * @param {unsigned long} arg1
  */
 multiplyProjectionMatrix : function (
 mat4, 
-int 
+long 
 )
 {
 },
@@ -3268,21 +3290,21 @@ getVisibleSize : function (
 /**
  * @method loadProjectionMatrix
  * @param {mat4_object} arg0
- * @param {unsigned int} arg1
+ * @param {unsigned long} arg1
  */
 loadProjectionMatrix : function (
 mat4, 
-int 
+long 
 )
 {
 },
 
 /**
  * @method initProjectionMatrixStack
- * @param {unsigned int} arg0
+ * @param {unsigned long} arg0
  */
 initProjectionMatrixStack : function (
-int 
+long 
 )
 {
 },
@@ -4313,12 +4335,12 @@ getGLProgram : function (
 
 /**
  * @method setUniformTexture
-* @param {String|String|int|int} str
-* @param {unsigned int|cc.Texture2D|cc.Texture2D|unsigned int} int
+* @param {int|String} int
+* @param {cc.Texture2D|cc.Texture2D} texture2d
 */
 setUniformTexture : function(
-int,
-int 
+str,
+texture2d 
 )
 {
 },
@@ -6694,13 +6716,9 @@ char
 
 /**
  * @method getString
- * @param {char} arg0
- * @param {char} arg1
  * @return {char}
  */
 getString : function (
-char, 
-char 
 )
 {
     return 0;
@@ -6708,11 +6726,9 @@ char
 
 /**
  * @method getLong
- * @param {char} arg0
  * @return {long}
  */
 getLong : function (
-char 
 )
 {
     return 0;
@@ -6820,13 +6836,9 @@ char
 
 /**
  * @method getBool
- * @param {char} arg0
- * @param {bool} arg1
  * @return {bool}
  */
 getBool : function (
-char, 
-bool 
 )
 {
     return false;
@@ -6848,11 +6860,9 @@ vec3
 
 /**
  * @method getType
- * @param {char} arg0
  * @return {cc.Properties::Type}
  */
 getType : function (
-char 
 )
 {
     return 0;
@@ -6870,11 +6880,9 @@ getNextNamespace : function (
 
 /**
  * @method getInt
- * @param {char} arg0
  * @return {int}
  */
 getInt : function (
-char 
 )
 {
     return 0;
@@ -6934,11 +6942,9 @@ getNextProperty : function (
 
 /**
  * @method getFloat
- * @param {char} arg0
  * @return {float}
  */
 getFloat : function (
-char 
 )
 {
     return 0;
@@ -7115,6 +7121,16 @@ func
 },
 
 /**
+ * @method getDefaultResourceRootPath
+ * @return {String}
+ */
+getDefaultResourceRootPath : function (
+)
+{
+    return ;
+},
+
+/**
  * @method loadFilenameLookupDictionaryFromFile
  * @param {String} arg0
  */
@@ -7171,6 +7187,16 @@ str
 },
 
 /**
+ * @method getOriginalSearchPaths
+ * @return {Array}
+ */
+getOriginalSearchPaths : function (
+)
+{
+    return new Array();
+},
+
+/**
  * @method getNewFilename
  * @param {String} arg0
  * @return {String}
@@ -7180,6 +7206,18 @@ str
 )
 {
     return ;
+},
+
+/**
+ * @method listFiles
+ * @param {String} arg0
+ * @return {Array}
+ */
+listFiles : function (
+str 
+)
+{
+    return new Array();
 },
 
 /**
@@ -7456,6 +7494,18 @@ getWritablePath : function (
 )
 {
     return ;
+},
+
+/**
+ * @method listFilesRecursively
+ * @param {String} arg0
+ * @param {Array} arg1
+ */
+listFilesRecursively : function (
+str, 
+array 
+)
+{
 },
 
 /**
@@ -7854,7 +7904,7 @@ cc.EventMouse = {
 
 /**
  * @method getMouseButton
- * @return {int}
+ * @return {cc.EventMouse::MouseButton}
  */
 getMouseButton : function (
 )
@@ -7874,10 +7924,10 @@ getLocation : function (
 
 /**
  * @method setMouseButton
- * @param {int} arg0
+ * @param {cc.EventMouse::MouseButton} arg0
  */
 setMouseButton : function (
-int 
+mousebutton 
 )
 {
 },
@@ -10689,13 +10739,13 @@ node
 },
 
 /**
- * @method update
- * @param {float} arg0
+ * @method getNumberOfRunningActions
+ * @return {int}
  */
-update : function (
-float 
+getNumberOfRunningActions : function (
 )
 {
+    return 0;
 },
 
 /**
@@ -10758,6 +10808,16 @@ pauseAllRunningActions : function (
 )
 {
     return new Array();
+},
+
+/**
+ * @method update
+ * @param {float} arg0
+ */
+update : function (
+float 
+)
+{
 },
 
 /**
@@ -13932,6 +13992,242 @@ LayerGradient : function (
 };
 
 /**
+ * @class LayerRadialGradient
+ */
+cc.LayerRadialGradient = {
+
+/**
+ * @method getStartColor
+ * @return {color4b_object}
+ */
+getStartColor : function (
+)
+{
+    return cc.Color4B;
+},
+
+/**
+ * @method getBlendFunc
+ * @return {cc.BlendFunc}
+ */
+getBlendFunc : function (
+)
+{
+    return cc.BlendFunc;
+},
+
+/**
+ * @method getStartColor3B
+ * @return {color3b_object}
+ */
+getStartColor3B : function (
+)
+{
+    return cc.Color3B;
+},
+
+/**
+ * @method getStartOpacity
+ * @return {unsigned char}
+ */
+getStartOpacity : function (
+)
+{
+    return 0;
+},
+
+/**
+ * @method setCenter
+ * @param {vec2_object} arg0
+ */
+setCenter : function (
+vec2 
+)
+{
+},
+
+/**
+ * @method getEndColor
+ * @return {color4b_object}
+ */
+getEndColor : function (
+)
+{
+    return cc.Color4B;
+},
+
+/**
+ * @method setStartOpacity
+ * @param {unsigned char} arg0
+ */
+setStartOpacity : function (
+char 
+)
+{
+},
+
+/**
+ * @method getCenter
+ * @return {vec2_object}
+ */
+getCenter : function (
+)
+{
+    return cc.Vec2;
+},
+
+/**
+ * @method setEndOpacity
+ * @param {unsigned char} arg0
+ */
+setEndOpacity : function (
+char 
+)
+{
+},
+
+/**
+ * @method setExpand
+ * @param {float} arg0
+ */
+setExpand : function (
+float 
+)
+{
+},
+
+/**
+ * @method getEndOpacity
+ * @return {unsigned char}
+ */
+getEndOpacity : function (
+)
+{
+    return 0;
+},
+
+/**
+ * @method initWithColor
+ * @param {color4b_object} arg0
+ * @param {color4b_object} arg1
+ * @param {float} arg2
+ * @param {vec2_object} arg3
+ * @param {float} arg4
+ * @return {bool}
+ */
+initWithColor : function (
+color4b, 
+color4b, 
+float, 
+vec2, 
+float 
+)
+{
+    return false;
+},
+
+/**
+ * @method setEndColor
+* @param {color4b_object|color3b_object} color4b
+*/
+setEndColor : function(
+color3b 
+)
+{
+},
+
+/**
+ * @method getEndColor3B
+ * @return {color3b_object}
+ */
+getEndColor3B : function (
+)
+{
+    return cc.Color3B;
+},
+
+/**
+ * @method setRadius
+ * @param {float} arg0
+ */
+setRadius : function (
+float 
+)
+{
+},
+
+/**
+ * @method setStartColor
+* @param {color4b_object|color3b_object} color4b
+*/
+setStartColor : function(
+color3b 
+)
+{
+},
+
+/**
+ * @method getExpand
+ * @return {float}
+ */
+getExpand : function (
+)
+{
+    return 0;
+},
+
+/**
+ * @method setBlendFunc
+ * @param {cc.BlendFunc} arg0
+ */
+setBlendFunc : function (
+blendfunc 
+)
+{
+},
+
+/**
+ * @method getRadius
+ * @return {float}
+ */
+getRadius : function (
+)
+{
+    return 0;
+},
+
+/**
+ * @method create
+* @param {color4b_object} color4b
+* @param {color4b_object} color4b
+* @param {float} float
+* @param {vec2_object} vec2
+* @param {float} float
+* @return {cc.LayerRadialGradient|cc.LayerRadialGradient}
+*/
+create : function(
+color4b,
+color4b,
+float,
+vec2,
+float 
+)
+{
+    return cc.LayerRadialGradient;
+},
+
+/**
+ * @method LayerRadialGradient
+ * @constructor
+ */
+LayerRadialGradient : function (
+)
+{
+},
+
+};
+
+/**
  * @class LayerMultiplex
  */
 cc.LayerMultiplex = {
@@ -16211,6 +16507,16 @@ int
 },
 
 /**
+ * @method getAllParticleSystems
+ * @return {Array}
+ */
+getAllParticleSystems : function (
+)
+{
+    return new Array();
+},
+
+/**
  * @method ParticleSystem
  * @constructor
  */
@@ -17369,6 +17675,16 @@ rect
 },
 
 /**
+ * @method isStretchEnabled
+ * @return {bool}
+ */
+isStretchEnabled : function (
+)
+{
+    return false;
+},
+
+/**
  * @method setTextureRect
 * @param {rect_object|rect_object} rect
 * @param {bool} bool
@@ -17392,6 +17708,16 @@ str
 )
 {
     return false;
+},
+
+/**
+ * @method setStretchEnabled
+ * @param {bool} arg0
+ */
+setStretchEnabled : function (
+bool 
+)
+{
 },
 
 /**
@@ -17543,16 +17869,6 @@ isTextureRectRotated : function (
 },
 
 /**
- * @method setStrechEnabled
- * @param {bool} arg0
- */
-setStrechEnabled : function (
-bool 
-)
-{
-},
-
-/**
  * @method getTextureRect
  * @return {rect_object}
  */
@@ -17560,16 +17876,6 @@ getTextureRect : function (
 )
 {
     return cc.Rect;
-},
-
-/**
- * @method isStrechEnabled
- * @return {bool}
- */
-isStrechEnabled : function (
-)
-{
-    return false;
 },
 
 /**
@@ -21589,12 +21895,14 @@ removeAllTextures : function (
 
 /**
  * @method addImageAsync
- * @param {String} arg0
- * @param {function} arg1
- */
-addImageAsync : function (
-str, 
-func 
+* @param {String|String} str
+* @param {function|function} func
+* @param {String} str
+*/
+addImageAsync : function(
+str,
+func,
+str 
 )
 {
 },
@@ -21713,6 +22021,16 @@ setETC1AlphaFileSuffix : function (
 str 
 )
 {
+},
+
+/**
+ * @method getETC1AlphaFileSuffix
+ * @return {String}
+ */
+getETC1AlphaFileSuffix : function (
+)
+{
+    return ;
 },
 
 /**

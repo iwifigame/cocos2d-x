@@ -1,6 +1,6 @@
 /****************************************************************************
  Copyright (c) 2010-2012 cocos2d-x.org
- Copyright (c) 2013-2016 Chukong Technologies Inc.
+ Copyright (c) 2013-2017 Chukong Technologies Inc.
 
  http://www.cocos2d-x.org
 
@@ -136,7 +136,10 @@ static id s_sharedDirectorCaller;
             glFlush();
         
         [EAGLContext setCurrentContext: cocos2dxContext];
-        director->mainLoop();
+
+        CFTimeInterval dt = ((CADisplayLink*)displayLink).timestamp - lastDisplayTime;
+        lastDisplayTime = ((CADisplayLink*)displayLink).timestamp;
+        director->mainLoop(dt);
     }
 }
 
